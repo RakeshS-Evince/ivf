@@ -1,28 +1,27 @@
 @import "mixins";
 
 $grid-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 1024px,
-  xl: 1200px,
-  xxl: 1400px,
-  xxxl: 1600px
-) !default;
+    xs: 0,
+    sm: 576px,
+    md: 768px,
+    lg: 1024px,
+    xl: 1200px,
+    xxl: 1400px,
+    xxxl: 1600px) !default;
 
-$primary:               #192C53 !default;
-$secondary:             #DECB76 !default;
-$success:               #55B958 !default;
-$danger:                #FF6247 !default;
-$warning:               #F2994A !default;
-$info:                  #0EB3D0 !default;
-$light:                 #718472 !default;
-$dark:                  #333333 !default;
-$white:                 #FFFFFF !default;
-$black:                 #000000 !default;
-$body-bg:               #FFFFFF !default;
-$body-color:            #333333 !default;
-$border-color:          #718472 !default; 
+$primary: #192C53 !default;
+$secondary: #DECB76 !default;
+$success: #55B958 !default;
+$danger: #FF6247 !default;
+$warning: #F2994A !default;
+$info: #0EB3D0 !default;
+$light: #718472 !default;
+$dark: #333333 !default;
+$white: #FFFFFF !default;
+$black: #000000 !default;
+$body-bg: #FFFFFF !default;
+$body-color: #333333 !default;
+$border-color: #718472 !default;
 
 :root {
     --bs-primary: $primary;
@@ -30,7 +29,7 @@ $border-color:          #718472 !default;
     --bs-success: $success;
     --bs-danger: $danger;
     --bs-warning: $warning;
-    --bs-info: $info; 
+    --bs-info: $info;
     --bs-light: $light;
     --bs-dark: $dark;
     --bs-white: $white;
@@ -44,75 +43,96 @@ $border-color:          #718472 !default;
     --bs-font-heading: 'Caslon540BT-Roman';
     --bs-font-italic: 'Caslon540BT';
 
-    --bs-body-ff: var(--bs-font);
-    --bs-body-fs: 16px;
-    --bs-body-lh: 24px;
-    --bs-body-fw: 400;
+    --bs-body-ff: var(--bs-font
+    );
+--bs-body-fs: 16px;
+--bs-body-lh: 24px;
+--bs-body-fw: 400;
 
-    --bs-small-font-size: 14px;
-    --bs-small-line-height: 24px;
+--bs-small-font-size: 14px;
+--bs-small-line-height: 24px;
 
-    --bs-font-size-h1: 54px;                --bs-line-height-h1: 58px;                  --bs-font-weight-h1: 400; 
-    --bs-font-size-h2: 34px;                --bs-line-height-h2: 40px;                  --bs-font-weight-h2: 400; 
-    --bs-font-size-h3: 28px;                --bs-line-height-h3: 36px;                  --bs-font-weight-h3: 400; 
-    --bs-font-size-h4: 24px;                --bs-line-height-h4: 36px;                  --bs-font-weight-h4: 400; 
-    --bs-font-size-h5: 20px;                --bs-line-height-h5: 24px;                  --bs-font-weight-h5: 700; 
-    --bs-font-size-h6: 18px;                --bs-line-height-h6: 20px;                  --bs-font-weight-h6: 400; 
+--bs-font-size-h1: 54px;
+--bs-line-height-h1: 58px;
+--bs-font-weight-h1: 400;
+--bs-font-size-h2: 34px;
+--bs-line-height-h2: 40px;
+--bs-font-weight-h2: 400;
+--bs-font-size-h3: 28px;
+--bs-line-height-h3: 36px;
+--bs-font-weight-h3: 400;
+--bs-font-size-h4: 24px;
+--bs-line-height-h4: 36px;
+--bs-font-weight-h4: 400;
+--bs-font-size-h5: 20px;
+--bs-line-height-h5: 24px;
+--bs-font-weight-h5: 700;
+--bs-font-size-h6: 18px;
+--bs-line-height-h6: 20px;
+--bs-font-weight-h6: 400;
 
-    --bs-radius-lg: 20px;
-    --bs-radius-md: 16px;
-    --bs-radius-sm: 12px;
-    --bs-radius-xs: 8px;
-    --bs-radius: 4px;
+--bs-radius-lg: 20px;
+--bs-radius-md: 16px;
+--bs-radius-sm: 12px;
+--bs-radius-xs: 8px;
+--bs-radius: 4px;
 
-    --bs-font-thin:  100;
-    --bs-font-extra-light: 200;
-    --bs-font-light: 300;
-    --bs-font-regular: 400;
-    --bs-font-medium: 500;  
-    --bs-font-semi-bold: 600;
-    --bs-font-bold: 700;
-    --bs-font-extra-bold: 800;
-    --bs-font-black: 900;   
+--bs-font-thin: 100;
+--bs-font-extra-light: 200;
+--bs-font-light: 300;
+--bs-font-regular: 400;
+--bs-font-medium: 500;
+--bs-font-semi-bold: 600;
+--bs-font-bold: 700;
+--bs-font-extra-bold: 800;
+--bs-font-black: 900;
 
-    --transition: all .4s ease-in-out 0s; 
+--transition: all .4s ease-in-out 0s;
 
-    --bs-space-y: 8px;
-    --bs-space-small-y: 9px;
-    --bs-gutter: 40px;
+--bs-space-y: 8px;
+--bs-space-small-y: 9px;
+--bs-gutter: 40px;
 }
 
 @include responsive(xxxl) {
-    :root {
-
-    }
+    :root {}
 }
 
 @include responsive(xxl) {
-    :root { 
-    }
+    :root {}
 }
 
 @include responsive(xl) {
     :root {
-        --bs-font-size-h1: 40px;                --bs-line-height-h1: 46px;
-        --bs-font-size-h2: 28px;                --bs-line-height-h2: 32px;
-        --bs-font-size-h3: 24px;                --bs-line-height-h3: 32px;
-        --bs-font-size-h4: 24px;                --bs-line-height-h4: 32px;
-        --bs-font-size-h5: 18px;                --bs-line-height-h5: 24px;
+        --bs-font-size-h1: 40px;
+        --bs-line-height-h1: 46px;
+        --bs-font-size-h2: 28px;
+        --bs-line-height-h2: 32px;
+        --bs-font-size-h3: 24px;
+        --bs-line-height-h3: 32px;
+        --bs-font-size-h4: 24px;
+        --bs-line-height-h4: 32px;
+        --bs-font-size-h5: 18px;
+        --bs-line-height-h5: 24px;
 
-        --bs-gutter: 30px; 
+        --bs-gutter: 30px;
     }
 }
 
 @include responsive(md) {
     :root {
-        --bs-font-size-h1: 34px;                --bs-line-height-h1: 38px;
-        --bs-font-size-h2: 24px;                --bs-line-height-h2: 28px;
-        --bs-font-size-h3: 18px;                --bs-line-height-h3: 22px;
-        --bs-font-size-h4: 20px;                --bs-line-height-h4: 22px;
-        --bs-font-size-h5: 18px;                --bs-line-height-h5: 22px;
-        --bs-font-size-h6: 16px;                --bs-line-height-h6: 20px;
+        --bs-font-size-h1: 34px;
+        --bs-line-height-h1: 38px;
+        --bs-font-size-h2: 24px;
+        --bs-line-height-h2: 28px;
+        --bs-font-size-h3: 18px;
+        --bs-line-height-h3: 22px;
+        --bs-font-size-h4: 20px;
+        --bs-line-height-h4: 22px;
+        --bs-font-size-h5: 18px;
+        --bs-line-height-h5: 22px;
+        --bs-font-size-h6: 16px;
+        --bs-line-height-h6: 20px;
     }
 }
 
@@ -120,40 +140,37 @@ $grid-gutter-width: 40px !default;
 
 $spacer: 4px !default;
 $spacers: (
-  0: 0,
-  1: $spacer * 1,
-  2: $spacer * 2,
-  3: $spacer * 3,
-  4: $spacer * 4,
-  5: $spacer * 5,
-  6: $spacer * 6,
-  7: $spacer * 7,
-  8: $spacer * 8,
-  9: $spacer * 9,
-  10: $spacer * 10,
-  11: $spacer * 11,
-  12: $spacer * 12,
-  13: $spacer * 13,
-  14: $spacer * 14,
-  15: $spacer * 15,
-  16: $spacer * 16,
-  17: $spacer * 17,
-  18: $spacer * 18,
-  19: $spacer * 19,
-  20: $spacer * 20,
-  21: $spacer * 21,
-  22: $spacer * 22,
-  23: $spacer * 23,
-  24: $spacer * 24,
-  25: $spacer * 25
-) !default;
+    0: 0,
+    1: $spacer * 1,
+    2: $spacer * 2,
+    3: $spacer * 3,
+    4: $spacer * 4,
+    5: $spacer * 5,
+    6: $spacer * 6,
+    7: $spacer * 7,
+    8: $spacer * 8,
+    9: $spacer * 9,
+    10: $spacer * 10,
+    11: $spacer * 11,
+    12: $spacer * 12,
+    13: $spacer * 13,
+    14: $spacer * 14,
+    15: $spacer * 15,
+    16: $spacer * 16,
+    17: $spacer * 17,
+    18: $spacer * 18,
+    19: $spacer * 19,
+    20: $spacer * 20,
+    21: $spacer * 21,
+    22: $spacer * 22,
+    23: $spacer * 23,
+    24: $spacer * 24,
+    25: $spacer * 25) !default;
 
 $utilities: (
-    "order": (
-        responsive: true,
+    "order": (responsive: true,
         property: order,
-        values: (
-            first: -1,
+        values: (first: -1,
             0: 0,
             1: 1,
             2: 2,
@@ -168,6 +185,6 @@ $utilities: (
 );
 
 
-$box-shadow:                  0 .5rem 1rem rgba($black, .15);
-$box-shadow-sm:               0px 0px 12px rgba($black, .25);
-$box-shadow-lg:               0 1rem 3rem rgba($black, .175);
+$box-shadow: 0 .5rem 1rem rgba($black, .15);
+$box-shadow-sm: 0px 0px 12px rgba($black, .25);
+$box-shadow-lg: 0 1rem 3rem rgba($black, .175);

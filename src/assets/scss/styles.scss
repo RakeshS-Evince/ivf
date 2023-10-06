@@ -467,7 +467,7 @@ input[type="number"] {
 }
 
 input[type="search"] {
-    background: transparent url("assets/images/icon-search.svg") no-repeat scroll right 16px center;
+    background: transparent url("../images/icon-search.svg") no-repeat scroll right 16px center;
     padding-right: 50px;
 }
 
@@ -871,12 +871,12 @@ header {
                         width: 100%;
                         top: 3px;
                         left: 0;
-                        background: transparent url("assets/images/icon-plus.svg") no-repeat scroll right center;
+                        background: transparent url("../images/icon-plus.svg") no-repeat scroll right center;
                         background-size: contain;
                         cursor: pointer;
 
                         &[aria-expanded="true"] {
-                            background-image: url("assets/images/icon-minus.svg");
+                            background-image: url("../images/icon-minus.svg");
                         }
                     }
                 }
@@ -1246,12 +1246,12 @@ aside {
         &:after {
             padding-left: 0;
             background-position: center;
-            background-image: url("assets/images/icon-plus.svg");
+            background-image: url("../images/icon-plus.svg");
             background-size: 29px;
         }
 
         &:not(.collapsed)::after {
-            background-image: url("assets/images/icon-minus.svg");
+            background-image: url("../images/icon-minus.svg");
             background-position: center;
         }
 
@@ -1487,7 +1487,7 @@ aside {
     min-height: 450px;
 
     blockquote {
-        background: transparent url("assets/images/icon-quote.svg") no-repeat scroll left top;
+        background: transparent url("../images/icon-quote.svg") no-repeat scroll left top;
         line-height: calc(var(--bs-line-height-h4) - 8px);
         min-height: 53px;
     }
@@ -1556,12 +1556,12 @@ aside {
 
     &.slick-prev {
         left: 20px;
-        background-image: url("assets/images/icon-arrow-left.svg");
+        background-image: url("../images/icon-arrow-left.svg");
     }
 
     &.slick-next {
         right: 20px;
-        background-image: url("assets/images/icon-arrow-right.svg");
+        background-image: url("../images/icon-arrow-right.svg");
     }
 
     &.slick-disabled {
