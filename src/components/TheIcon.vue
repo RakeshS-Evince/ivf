@@ -3,9 +3,9 @@
 </template>
 
 <script setup>
-import { onMounted ,ref} from 'vue'
-const props=defineProps(['path']);
-const svgContent=ref(null)
+import { onMounted, ref } from 'vue'
+const props = defineProps(['path']);
+const svgContent = ref(null)
 onMounted(async function () {
     try {
         const response = await fetch(props?.path);

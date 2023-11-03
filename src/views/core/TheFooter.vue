@@ -3,11 +3,11 @@
 		<div class="container-fluid">
 			<div class="d-flex flex-column flex-md-row justify-content-between align-items-end mb-10 mb-md-8">
 				<a href="#" class="brand-logo me-auto">
-					<!-- <TheIcon path="../../assets/images/brand-logo.svg" /> -->
+					<TheIcon :path="'../../../src/assets/images/brand-logo.svg'" />
 				</a>
 				<ul class="d-flex flex-wrap me-auto me-md-0 mt-10 mt-md-0">
 					<li><a href="https://www.facebook.com/IVFOrlando/">
-							<!-- <TheIcon path="../../assets/images/icon-facebook.svg" /> -->
+							<TheIcon :path="'../../src/assets/images/icon-facebook.svg'" />
 						</a></li>
 				</ul>
 			</div>

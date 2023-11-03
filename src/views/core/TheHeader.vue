@@ -4,12 +4,12 @@
             <div class="d-flex flex-wrap w-100 justify-content-between">
                 <!-- LOGO -->
                 <div class="d-flex align-items-center position-relative">
-                    <RouterLink to="/" class="brand-logo">
+                    <AppLink to="/" class="brand-logo">
                         <TheIcon :path="app_image" />
-                    </RouterLink>
-                    <RouterLink to="/" class="brand-logo-mobile">
+                    </AppLink>
+                    <AppLink to="/" class="brand-logo-mobile">
                         <TheIcon :path="app_mobile_image" />
-                    </RouterLink>
+                    </AppLink>
                 </div>
                 <!-- LOGO END-->
 
@@ -17,17 +17,17 @@
                     <!-- Navigation buttons -->
                     <template v-for=" button in headerData?.fields?.buttons">
                         <template v-if="!button.label && button?.image">
-                            <RouterLink :to="'/' + button?.href"
+                            <AppLink :to="'/' + button?.href"
                                 class="icon btn btn-outline-secondary rounded-circle ms-2 ms-xl-5 p-0">
                                 <TheIcon :path="button?.image" />
-                            </RouterLink>
+                            </AppLink>
                         </template>
                         <template v-else>
-                            <RouterLink :to="'/' + button?.href"
+                            <AppLink :to="'/' + button?.href"
                                 :class="{ 'ms-2 p-0': button?.is_phone, 'btn btn-secondary ms-10': !button?.is_phone && button?.label }"
-                                class="d-none d-xl-inline-block">
+                                class="d-none d-xl-inline-block" v-sl>
                                 {{ button.label }}
-                            </RouterLink>
+                            </AppLink>
                         </template>
                     </template>
                     <!-- Navigation buttons end -->
@@ -46,9 +46,9 @@
                     <template v-for="(button) in  headerData?.fields?.buttons ">
                         <template> </template>
                         <template v-if="button.label && !/\d/.test(button.label)">
-                            <RouterLink :to="'/' + button?.href" class="btn btn-secondary">
+                            <AppLink :to="'/' + button?.href" class="btn btn-secondary">
                                 {{ button.label }}
-                            </RouterLink>
+                            </AppLink>
                         </template>
                     </template>
                 </div>
@@ -56,14 +56,17 @@
 
                 <!-- Main Navigations links -->
                 <ul class="d-flex flex-column flex-xl-row flex-wrap justify-content-end">
-                    <template v-for=" (item, index)  in  navItems ">
+                    <template v-for=" (item, index)  in  navItems">
                         <!-- Nav links -->
                         <li v-if="!item.hide_this" ref="itemRefs" @click="toggleIcon(index)">
-                            <RouterLink data-bs-toggle="collapse" :data-bs-target="'#id' + item.meta.id"
-                                :to="'/' + item.href" aria-expanded="false">{{
+                            <AppLink data-bs-toggle="collapse" class="d-inline-block d-xl-none"
+                                :data-bs-target="'#id' + item.meta.id" :to="'/' + item.href" aria-expanded="false">{{
                                     item.label }}
                                 <i aria-expanded="false"></i>
-                            </RouterLink>
+                            </AppLink>
+                            <AppLink class="d-none d-xl-inline-block" :to="'/' + item.href">
+                                {{ item.label }}
+                            </AppLink>
                             <!-- Nav child links -->
                             <template v-if="item?.nav_item_child.length">
                                 <div class="collapse" :id="'id' + item.meta.id">
@@ -71,29 +74,28 @@
                                         <template v-for="(child_item)  in  item?.nav_item_child ">
                                             <!-- Nav child single -->
                                             <li v-if="!getSubMenu(child_item.sub_menu).length">
-                                                <RouterLink :to="'/' + child_item.href">{{ child_item.label }}</RouterLink>
+                                                <AppLink :to="'/' + child_item.href">{{ child_item.label }}</AppLink>
                                             </li>
                                             <!-- Nav child single end -->
 
                                             <!-- Nav child Multiple -->
                                             <template v-else>
                                                 <li class="nav-sub">
-                                                    <RouterLink :to="'/' + child_item?.href"
-                                                        class="d-none d-xl-inline-block" aria-expanded="true"
-                                                        data-bs-toggle="collapse"
-                                                        :data-bs-target="'#id' + child_item.meta.id">{{
-                                                            child_item?.label }}</RouterLink>
-                                                    <RouterLink to="/" class="d-inline-block d-xl-none" aria-expanded="true"
-                                                        data-bs-toggle="collapse"
+                                                    <AppLink :to="'/' + child_item?.href" class="d-inline-block d-xl-none"
+                                                        aria-expanded="true" data-bs-toggle="collapse"
                                                         :data-bs-target="'#id' + child_item.meta.id">
                                                         {{
-                                                            child_item?.label }}</RouterLink>
+                                                            child_item?.label }}
+                                                    </AppLink>
+                                                    <AppLink :to="'/' + child_item?.href" class="d-none d-xl-inline-block">
+                                                        {{ child_item?.label }}
+                                                    </AppLink>
                                                     <!-- Nav child's child -->
                                                     <ul class="collapse" :id="'id' + child_item.meta.id">
                                                         <template v-for="sub_menu  in  getSubMenu(child_item.sub_menu)">
                                                             <li>
-                                                                <RouterLink :to="'/' + sub_menu?.href">{{ sub_menu?.label }}
-                                                                </RouterLink>
+                                                                <AppLink :to="'/' + sub_menu?.href">{{ sub_menu?.label }}
+                                                                </AppLink>
                                                             </li>
                                                         </template>
                                                     </ul>
@@ -122,6 +124,7 @@ import app_mobile_image from '../../assets/images/icon-logo.svg'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useButterCms } from '../../composables/useButterCms';
 import TheIcon from '../../components/TheIcon.vue';
+import AppLink from '../../components/AppLink.vue';
 const offsetFlag = ref(true)
 const classNav = ref(false);
 function toggleNav() {
@@ -150,10 +153,6 @@ const getHeader = async () => {
 const navItems = computed(() => {
     return navLinks.value.sort((a, b) => a.order - b.order)
 })
-watch(itemRefs, (newVal, oldval) => {
-    console.log(newVal)
-    console.log(oldval)
-})
 onMounted(() => {
     getHeader()
     document.addEventListener('scroll', (e) => {
@@ -176,12 +175,14 @@ function getSubMenu(item) {
     item.split(';').map(el => {
         let [label, href] = el.split(':');
         if (!label || !href) return;
-        output.push({ label: label?.trim(), href: href?.trim() });
+        output.push({ label: label?.trim(), href: href?.trim().startsWith('/') ? href.trim().slice(1) : href.trim() });
     });
     return output;
 }
 function toggleIcon(index) {
-    itemRefs.value[index].firstChild.lastChild.setAttribute('aria-expanded', itemRefs.value[index].firstChild.getAttribute('aria-expanded'))
+    let isExpanded = itemRefs.value[index].firstChild.nextElementSibling?.getAttribute('aria-expanded');
+    let icon = itemRefs.value[index].firstChild.nextElementSibling.firstChild.nextElementSibling
+    icon?.setAttribute('aria-expanded', isExpanded)
 }
 </script>
 <style></style>
